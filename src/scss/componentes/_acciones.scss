@@ -1,0 +1,36 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.acciones {
+    margin-top: v.$separacion;
+    display: flex;
+    justify-content: space-between;
+    a {
+        transform: scale(1.2);
+        margin-left: 2rem;
+        margin-right: 2rem;
+        //width: 25%;
+        transition: transform 0.2s ease-in-out, text-shadow 0.1s ease-in-out; /* Agrupar las propiedades de transición */
+        color: v.$blanco;
+        //display: block;
+        //margin: 0 auto;
+        text-align: center;
+        //position: relative;
+        a:not(.no-margin-bottom) {
+            margin-bottom: 2.5rem;
+        }
+        &:hover {
+            transform: scale(1.1);
+            // scolor gold
+            background: linear-gradient(90deg, #00ffff, #ff00c3);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &:active { // previe errase
+            text-shadow: 0px 0px 10px gold,
+            0px 0px 20px gold,
+            0px 0px 40px gold,
+            0px 0px 80px gold;
+        }
+    }
+}

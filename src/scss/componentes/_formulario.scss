@@ -1,0 +1,44 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.formulario {
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    label {
+        flex: 0 0 10rem; // alinear labels
+    }
+
+    input {
+        flex: 1;
+        border: none;
+    }
+
+    input:not([type="submit"]), textarea, select {
+        padding: 1.4rem;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid v.$gris;
+        border-radius: 8px;
+        transition: transform 0.2s ease-in-out;
+        background-color: lighten(v.$negro, 30%);
+        color: v.$blanco;
+        &:disabled {
+            cursor: not-allowed;
+        }
+        &::placeholder {
+            color: v.$blanco;
+        }
+        &:hover {
+            transform: scale(0.985);
+            color: gold;
+        }
+    }
+}

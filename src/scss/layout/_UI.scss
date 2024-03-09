@@ -1,0 +1,100 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+
+
+.contenedor-app {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1;
+        min-height: 100vh;
+    }
+    .imagen {
+        height: 20rem;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center;
+        border-radius: 10px;
+        @include m.tablet {
+            // max-height: 88rem;
+            // min-height: percentage($number: 1.1);
+            // // height: 100.9rem;
+            // height: percentage($number: 1.3);
+            //height: 100%;
+            height: auto;
+            //max-height: 120rem;
+            
+        }
+    }
+
+    .app {
+        width: 95%;
+        margin: 0 auto;
+        padding:  3rem 0;
+        @include m.tablet {
+            overflow: scroll;
+            scrollbar-width: none; /* Para navegadores WebKit */
+            overflow: -moz-scrollbars-none; /* Para navegadores Gecko */
+        }
+    }
+}
+
+.barra {
+    margin-bottom: 5rem;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Alinea los elementos verticalmente en el centro */
+    }
+
+    .boton {
+        @include m.boton(rgba(137, 43, 226, 0.721), v.$blanco);
+        text-align: center;
+    }
+}
+
+.barra-servicios {
+    margin-bottom: 2.5rem;
+    @include m.tablet {
+        gap: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .boton {
+        margin: 0 0 1rem 0;
+    }
+}
+
+.barra-servicios-green {
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+  
+    @include m.tablet {
+      display: flex;
+      justify-content: flex-start;
+    }
+  
+    .boton-green {
+      margin-bottom: 1rem;
+      width: 100%; /* Nuevo */
+    }
+  
+    .boton-red {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .boton-red {
+            width: 25vh;
+        }
+    }
+
+    @media (min-width: 1220px) {
+        .boton-red {
+            width: 50vh;
+        }
+    }
+
+}

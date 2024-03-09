@@ -1,0 +1,30 @@
+.alerta {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+
+    @keyframes aparecer {
+        0% { opacity: 0; } /* Opacidad al inicio de la animación */
+        100% { opacity: 1; } /* Opacidad al final de la animación */
+    }
+
+    &.errorlog {
+        background-color: rgb(146, 5, 5);
+        border-radius: 5px;
+        animation: aparecer 2s forwards;
+        
+    }
+    &.correctlog {
+        background-color: rgb(15, 162, 30);
+        border-radius: 5px;
+        animation: aparecer 2s forwards;
+    }
+    &.ocultar-alerta {
+        transform: translateX(180%);
+        transition: transform 1.5s ease; /* Agrega una transición suave */
+    }
+}
